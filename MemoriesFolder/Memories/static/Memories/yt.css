@@ -1,0 +1,432 @@
+/*######### Body ##########*/
+body{
+    width: 70%;
+    min-width: 1160px;
+    max-width: 1600px;
+    margin: 0 auto;
+	background-image: url(images/back2.png);
+}
+.body {
+   // min-height: 100vh;
+	min-height: 1000px;
+    background-color: #f8f8f8;
+    font-family: sans-serif;
+	position:relative;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+/*######### Head ##########*/
+header {
+  	border: 3px solid #e6e6e6;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 25px;
+	height: 180px;
+	position:relative;
+	background: #e6e6e6;
+}
+#logo {
+	display: block;
+	margin: 30px 0px 0px 10px;
+}
+.lineblack {
+	border: 8px #616161;
+	border-bottom:1px dashed #f8f8f8;
+	background: #3e3e3e;
+	width: 100%;
+	height: 150px;
+}
+.lineblack span {
+	display: block;
+	padding: 25px 50px 0 100px;
+	color: white;
+	font-size: 40px;
+	font-family: 'brush script mt', sans-serif;
+ }
+
+/*######### Правая панель ##########*/
+
+.as_right{
+	position: absolute;
+	top: 380px;
+	left: 870px;
+	width: 250px;
+	border-radius: 8px;
+	background: #e5e5e5;
+}
+.as_right h5{
+	text-align: center;
+	margin-bottom: 12px;
+	font-size: 20px;
+	font-family: 'fantasy', serif;
+	text-transform:uppercase;
+	font-weight: 900;
+	color: darkslategray;
+}
+.search input {
+	margin-left: 30px;
+	height: 2.5em;
+	border-radius: 25px;
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.07);
+}
+.search input[name="q"] {padding-right: 1.8em;}
+.search input[type="image"] {
+	position: absolute;
+	right: 40px;
+	vertical-align: middle;
+	width: 2.1em;
+	height: 2.1em;
+	margin-top: 4px;
+	box-shadow: none;
+	border-radius: 0;
+}
+.as_right .main-ul li{
+	float: none;
+	width: 170px;
+}
+.as_right .main-ul li:hover a {
+    background-color: gray;
+    -moz-transform: none;
+    -webkit-transform:none;
+    -o-transform:none;
+    transform:none;
+}
+
+/*######### Воспоминания ##########*/
+
+/* all */
+.mem > div{
+	position: relative;
+	clear: both;
+	float:left;
+	width: 800px;
+    margin: 20px 0px 0px 40px;
+    padding: 10px;
+	word-wrap:break-word;
+}
+.mem div > img {
+	margin-top: 10px;
+	width: 350px;
+	height: 250px;
+	border-radius: 12px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.mem h4 a{
+	text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+	color: black;
+    text-shadow: 0px 0px 0px rgba(0,0,0,.6);
+	text-transform:uppercase;
+    font-family:'Kotta One',serif;
+}
+.mem h6 {
+	margin-left: 10px;
+	font-size: 12px;
+	font-family:'Kotta One',serif;
+	text-transform:uppercase;
+	font-weight: bold;
+}
+.mem h6 a {
+	text-decoration: none;
+	color: black;
+}
+.in_mem{
+	position: absolute;
+	top: 0px;
+	left: 400px;
+	width: 400px;
+}
+.in_mem > p {
+	line-height: 1.9em;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #444444;
+}
+#like {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	font-size: 12px;
+}
+#like img {
+	margin-top:20px;
+}
+.hline:hover{
+	text-decoration: underline;
+}
+/* get */
+
+.getmem {
+	clear: both;
+	position: relative;
+	float:left;
+	width: 800px;
+    margin: 20px 0px 0px 100px;
+    padding: 10px;
+	word-wrap:break-word;
+	line-height: 1.9em;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #444444;
+}
+.getmem h6 a {
+	text-decoration: none;
+	color: black;
+}
+.getmem > p {
+	text-indent: 50px;
+}
+.getmem h6 {
+	font-size: 12px;
+	font-family:'Kotta One',serif;
+	text-transform:uppercase;
+	font-weight: bold;
+}
+.getmem #like {
+	position: absolute;
+	right: 20px;
+	bottom: 40px;
+	font-size: 16px;
+}
+#del_mem {
+	position: absolute;
+	right: 70px;
+	bottom: 40px;
+	font-size: 16px;
+}
+#del_mem a {color: gray}
+/*######### Комментарии ##########*/
+
+.comments {
+	position: relative;
+	clear: both;
+	padding: 10px;
+	width: 700px;
+	float: left;
+	left:  0px;
+	margin: 10px 0px 0px 100px;
+}
+.one_com p:first-child {
+	font-size: 12px;
+	font-weight: bold;
+}
+.one_com p{
+	font-family:'Kotta One',serif;
+	padding: 0px 8px 0px 8px;
+	color: #222222;
+}
+.addcomment {
+	float:left;
+	display: block;
+	clear: both;
+	margin-bottom: 50px;
+}
+.addcomment textarea{
+	display: block;
+	width: 600px;
+	height: 80px;
+	resize: none;
+	margin: 5px 0px 5px 110px;
+}
+/*############ Форма добавления memory #############*/
+
+.centr{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.addmem{
+	margin-top: 25px;
+	padding: 25px;
+	background-color: #e6e6e6;
+	border-radius: 8px;
+	list-style-type:none;
+}
+.addmem li{
+	margin-top: -25px;
+}
+.addmem li:nth-child(5){
+	margin-top: 5px;
+}
+.addmem textarea{
+	width: 600px;
+	height: 150px;
+	resize: none;
+	height: 350px;
+}
+.addmem input{
+	width: 300px;
+}
+.addmem h5{
+	font-family:'Kotta One',serif;
+    font-weight: bold;
+    font-size: 22px;
+	color: #2F4F4F;
+    text-shadow: 0px 0px 0px rgba(0,0,0,.6);
+}
+/*######### Кнопка сайта #########*/
+
+.button {
+	float:right;
+	padding: 11px 25px;
+	font-family: 'Bree Serif', serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #fff;
+	text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+	background: #3e3e3e;
+	border: 1px solid #778899;
+	border-radius: 5px;
+	cursor: pointer;
+//	box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}
+.button:hover {
+	background: #2F4F4F;
+	border: 1px solid rgba(256,256,256,0.75);
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+/*######### Меню ##########*/
+
+.menu0 {
+	position: absolute;
+	top: 35px;
+	left: 30%;
+	//width: 700px;
+	width: 70%;
+}
+
+.main-ul li {
+    float:left;
+    position:relative;
+    width: 21%;
+    text-align:center;
+    list-style-type:none;
+    border:1px dotted #e6e6e6;
+	margin-left: 0px;
+}
+
+.main-ul li a {
+    display:block;
+    padding:20px 10px;
+    text-decoration:none;
+    position:relative;
+    z-index:100;
+    background-color: #d5d5d5;
+}
+
+.main-ul li:nth-child(4) a{
+	margin-left: 5px;
+	border-radius: 8px;
+	width: 250px;
+}
+
+.main-ul li a span {
+    display:block;
+    font-weight:700;
+    font-size:15px;
+    //color:rgba(120,120,120,0.9);
+	color: darkslategray;
+    text-transform:uppercase;
+    font-family:'Kotta One',serif;
+}
+
+.main-ul li:hover span {
+    color:#fff
+}
+.main-ul li:hover a {
+    background-color: gray;
+    -moz-transform:rotate(-2deg);
+    -webkit-transform:rotate(-2deg);
+    -o-transform:rotate(-2deg);
+    transform:rotate(-2deg)
+}
+
+/*pag ########################################*/
+
+.pagination {
+	position: relative;
+	clear: both;
+	list-style-type:none;
+	margin: 20px 0px 25px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pagination li{
+	float: left;
+	display: block;
+	margin: 0px 10px 0px 10px;
+//	background: darkslategray;
+	padding: 2px 4px 2px 4px;
+}
+.pagination li a{
+	text-decoration:none;
+	font-size: 22px;
+	color: black;
+}
+
+.pagination .current {
+	background: gray;
+	border-radius: 5px;
+}
+.pagination li .arrow_unavailable{
+	color: red;
+}
+
+/*######### Профиль ##########*/
+
+.profile ul {
+	padding: 25px;
+	background: #e6e6e6;
+	border-radius: 3px;
+	width: 300px;
+}
+.profile li{
+	list-style: none;
+	font-weight: bold;
+	margin: 10px 0px 10px 0px;
+	position: relative;
+}
+.profile span{
+	display: block;
+	position: absolute;
+	text-align: left;
+	font-weight: normal;
+	right: 0px;
+	top: 0;
+}
+.profile .button a {
+	text-decoration: none;
+	color: white;
+	float: right;
+}
+
+.updprofile{
+	margin-top: 50px;
+	list-style-type:none;
+	background: #e6e6e6;
+	font-size: 18px;
+	border-radius: 3px;
+}
+.updprofile li:nth-child(1) {
+	padding: 0 40px 0 0;
+	margin-top: 15px;
+}
+.updprofile li {
+	padding: 0 40px 0 0;
+	margin-top: -10px;
+	position: relative;
+}
+.updprofile span{
+	font-size: 22px;
+	font-weight: bold;
+	color: darkslategrey;
+}
+.updprofile .button{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

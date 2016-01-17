@@ -1,0 +1,38 @@
+{% extends "Memories/index.html" %}
+{% load static from staticfiles %}
+{% block core %}
+    <div class="getmem">
+        <h2>{{ mem.title }}</h2>
+        <p>{{ mem.text|linebreaks }}</p>
+        {% if user.id == mem.user_id %}
+        <p id="del_mem"><a href="/mem/delmem/{{ mem.id }}">Удалить</a></p>
+        {% endif %}
+        <p id = 'like'>
+        {% if username %}
+            <a href="/mem/addlike/{{ mem.id }}/" ><img src={% static "Memories/images/like.png" %} width='16px' height='16px'></a>{{ mem.like_count }}</p>
+        {% else %}
+            <img src={% static "Memories/images/like.png" %} width='16px' height='16px'> {{ mem.like_count }} </p>
+        {% endif %}
+        <h6>{{ mem.pub_date }} <br>Автор: <span class="hline"><a href="/profile/{{ mem.user.id }}/">{{ mem.user.get_username }}</a></span></h6>
+        <hr>
+    </div>
+    <div class="comments">
+        <h4>Комментарии:</h4>
+        {% for v in comments %}
+            <div class="one_com">
+                <p>{{ v.user.get_username }}</p>
+                <p>{{ v.comment }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+    <form action="/mem/get/{{ mem.id }}/" method="POST">
+        {% csrf_token %}
+        {% if username %}
+            <div class="addcomment">
+                <textarea name="comment"></textarea>
+                <input class='button' type="submit" value="Добавить" />
+            </div>
+        {% endif %}
+    </form>
+{% endblock %}

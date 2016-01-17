@@ -1,0 +1,23 @@
+{% extends "Memories/index.html" %}
+{% block core %}
+    <div id="wrapper">
+            <form  class="login-form" action="/auth/register" method="post">
+                {% csrf_token %}
+                <div class="header">
+		    <h1>Регистрация</h1>
+                </div>
+                <div class="content">
+                    {% if login_error %}
+                        <label class="error">{{ login_error }}</label>
+                    {% endif %}
+		        <input name="username" type="text" class="input username" value="Логин" onfocus="this.value=''" />
+                <input name="email" type="email" class="input password" value="Почта" onfocus="this.value=''" />
+		        <input name="password" type="password" class="input password" value="Пароль" onfocus="this.value=''" />
+                </div>
+                <div class="footer">
+		        <input type="submit" name="submit" value="Регистрация" class="ls_button" />
+                 </div>
+
+            </form>
+        </div>
+{% endblock %}

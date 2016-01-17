@@ -1,0 +1,16 @@
+{% extends "Memories/index.html" %}
+
+{% block core %}
+<form action="/addmem/" method="POST" id="f1">
+{% csrf_token %}
+	<div class="centr">
+        <ul class="addmem">
+            <li><h5 class="addmem_h5">Заголовок</h5></li>
+            <li><input name="title" type="text" name="title"/></li>
+            <li><h5 class="addmem_h5">Воспоминание</h5></li>
+            <li><textarea name="text"></textarea></li>
+            <li><input class='button' type="submit" value="Добавить"/></li>
+        </ul>
+    </div>
+    </form>
+{% endblock %}

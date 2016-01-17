@@ -1,0 +1,35 @@
+{% extends "Memories/index.html" %}
+{% load static from staticfiles %}
+{% block core %}
+    {% if prof %}
+    <div class="profile">
+        <div class="centr">
+            <ul>
+                <li>Username:<span>{{prof.username }}</span></li>
+                <li>Почта:<span>{{  prof.email }}</span></li>
+                <li>Имя:<span>{{  prof.first_name }}</span></li>
+                <li>Фамлия:<span>{{  prof.last_name }}</span></li>
+                {% if username  == prof.username %}
+                <li class="button"><a href ="/profile/{{ user.id }}/upd/">Изменить</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    {% else %}
+        <form action="/profile/{{ user.id }}/upd/" method="POST">
+        {% csrf_token %}
+            <div class="centr">
+                <ul class="updprofile">
+                    <li><span>{{username }}</span></li>
+                    <li><h5 class="addmem_h5">Почта</h5></li>
+                    <li><input name="email" type="text" name="title"/></li>
+                    <li><h5 class="addmem_h5">Имя</h5></li>
+                    <li><input name="name" type="text" name="title"/></li>
+                    <li><h5 class="addmem_h5">Фамилия</h5></li>
+                    <li><input name="lastname" type="text" name="title"/></li>
+                    <li><input class='button' type="submit" value="Принять"/></li>
+                </ul>
+            </div>
+        </form>
+    {% endif %}
+{% endblock %}

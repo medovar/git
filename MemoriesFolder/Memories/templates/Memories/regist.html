@@ -1,0 +1,16 @@
+{% extends "Memories/index.html" %}
+{% block core %}
+{% if form %}
+
+<form class = "form-4" action="/index/regist" method="POST">{% csrf_token %}
+    <h1>Регистрация</h1>
+	{{ form }}
+    <p>
+        <input type="submit" name="submit" value="ОК">
+    </p>
+	</form>
+
+{% elif form1 %}
+<p class = "form-4">Регистрация завершена</p>
+{% endif %}
+{% endblock %}

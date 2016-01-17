@@ -1,0 +1,70 @@
+{% extends "Memories/index.html" %}
+{% load static from staticfiles %}
+{% block core %}
+
+    <div class = 'mem'>
+        {%  for v in mem %}
+            <div>
+                <img src="{% static "Memories/images/mem.jpg" %} ">
+                <div class="in_mem">
+                    <h4><span class="hline"><a href="/mem/get/{{ v.id }}">{{ v.title }}</a></span></h4>
+                    <p>{{ v.text|truncatechars:350 }}</p>
+                </div>
+                <p id = 'like'><img src={% static "Memories/images/like.png" %} width='14px' height='14px'>{{ v.like_count }}</p>
+                <h6>{{ v.pub_date }} <br><br>Автор: <span class="hline"><a href="/profile/{{ v.user.id }}/">{{ v.user.get_username }}</a></span></h6>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pag">
+        <div class="large-3 large-offset-5 columns">
+            <ul class="pagination">
+                {% if mem.has_previous %}
+                    <li class="arrow"><a href={{ urlback }}>&laquo;</a></li>
+                {% else %}
+                    <li class="arrow_unavailable"><a href="">&laquo;</a></li>
+                {% endif %}
+                {% autoescape off %}
+                    {{ urlnumber}}
+                {% endautoescape %}
+                {% if mem.has_next %}
+                    <li class="arrow"><a href={{ urlnext }}>&raquo;</a></li>
+                {% else %}
+                    <li class="arrow_unavailable"><a href="">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <aside class="as_right">
+        <h5>Поиск</h5>
+        <div class="search">
+            <form action="">
+                <input name="q" />
+                <input type="image" src="{% static "Memories/images/search.png" %}" />
+            </form>
+        </div>
+        <h5>Сортировка</h5>
+        <ul class="main-ul">
+            {% if sortuser %}
+                <li><a href={{ sortuser }}><span>По Дате</span></a></li>
+            {% else %}
+                <li><a href="/memsortdate/page/1"><span>По Дате</span></a></li>
+            {% endif %}
+            {% if sortlikeuser %}
+                <li><a href={{ sortlikeuser }}><span>По Популярности</span></a></li>
+            {% else %}
+                <li><a href="/memsortlike/page/1"><span>По Популярности</span></a></li>
+            {% endif %}
+        </ul>
+        {% if username %}
+            <h5>Действия</h5>
+            <ul class="main-ul">
+                <li><a href='/addmem/'><span>Добавить</span></a></li>
+                <li><a href='/memuser/{{ user.id }}/page/1'><span>Мои воспоминания</span></a></li>
+            </ul>
+        {% endif %}
+    </aside>
+
+{% endblock %}

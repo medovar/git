@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link type="text/css" rel="stylesheet" href="{% static "Memories/yt.css" %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static "LoginSys/css.css" %}"/>
+    <link rel="icon" type="image/png" href="{% static "Memories/images/memic.png" %}" />
+    <meta charset="UTF-8">
+    <title>{% block title %}Воспоминания{% endblock %}</title>
+</head>
+<body>
+<div class = 'body'>
+    <Header>
+        <a id="logo" href="/"><img src="{% static "Memories/images/logo.png" %}"></a>
+        <nav class="menu0">
+            <ul class="main-ul">
+                <li><a href="{% url 'mem' %}"><span>Воспоминания</span></a></li>
+                <li>
+                    {% if username %}
+                        <a href="/profile/{{ user.id }}"><span>Профиль</span></a></li>
+                    {% else %}
+                        <a href="{% url 'login' %}"><span>Профиль</span></a></li>
+                    {% endif %}
+                <li><a href="#"><span>Меню</span></a></li>
+                <li>
+                    {% if username %}
+                        <a href="{% url 'logout' %}"><span>Выйти ({{ username }})</span></a>
+                    {% else %}
+                        <a href="{% url 'login' %}"><span>Войти / Регистрация</span></a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </Header>
+    <div class="lineblack">
+       <span> “I think it is all a matter of love; the more you love a memory the stronger and stranger it becomes”
+           ― Vladimir Nabokov</span>
+    </div>
+
+    {% block core%}
+    {% endblock %}
+
+</div>
+</body>
+</html>
